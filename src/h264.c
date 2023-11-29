@@ -193,7 +193,7 @@ static void h264_fill_dpb(struct request_data *data,
 
 		if (surface) {
 			timestamp = v4l2_timeval_to_ns(&surface->timestamp);
-			dpb->timestamp = timestamp;
+			dpb->reference_ts = timestamp;
 		}
 
 		dpb->frame_num = entry->pic.frame_idx;
