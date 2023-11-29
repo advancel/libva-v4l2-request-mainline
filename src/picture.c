@@ -32,7 +32,7 @@
 #include "surface.h"
 
 #include "h264.h"
-#include "h265.h"
+//#include "h265.h"
 #include "mpeg2.h"
 
 #include <assert.h>
@@ -189,11 +189,11 @@ static VAStatus codec_set_controls(struct request_data *driver_data,
 			return VA_STATUS_ERROR_OPERATION_FAILED;
 		break;
 
-	case VAProfileHEVCMain:
-		rc = h265_set_controls(driver_data, context, surface_object);
-		if (rc < 0)
-			return VA_STATUS_ERROR_OPERATION_FAILED;
-		break;
+	// case VAProfileHEVCMain:
+	// 	rc = h265_set_controls(driver_data, context, surface_object);
+	// 	if (rc < 0)
+	// 		return VA_STATUS_ERROR_OPERATION_FAILED;
+	// 	break;
 
 	default:
 		return VA_STATUS_ERROR_UNSUPPORTED_PROFILE;
