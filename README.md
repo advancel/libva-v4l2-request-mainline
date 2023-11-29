@@ -1,5 +1,6 @@
 # v4l2-request libVA Backend
 ## UPDATE : IT's STILL UNDER MAINTENANCE. WILL BE WORK IN COUPLE DAYS.
+## Unfortunately HEVC format was deleted by me. Dive deeper for implementing it to new version. Maybe i will figure it out next time.
 ## About
 
 This libVA backend is designed to work with the Linux Video4Linux2
