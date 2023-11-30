@@ -81,6 +81,8 @@ thumb_function tiled_to_planar
 1:	cbz	NTILES, 3f
 	mov	CNT, NTILES
 
+
+
 	/* x loop complete tiles */
 2:	pld	[SRC, TSIZE]
 	vld1.8	{d0 - d3}, [SRC :256], TSIZE

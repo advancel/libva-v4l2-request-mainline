@@ -114,52 +114,52 @@ struct v4l2_h264_pred_weight_table {
 
 #define V4L2_H264_SLICE_FLAG_FIELD_PIC			0x01
 #define V4L2_H264_SLICE_FLAG_BOTTOM_FIELD		0x02
-#define V4L2_H264_SLICE_FLAG_DIRECT_SPATIAL_MV_PRED	0x04
-#define V4L2_H264_SLICE_FLAG_SP_FOR_SWITCH		0x08
+// #define V4L2_H264_SLICE_FLAG_DIRECT_SPATIAL_MV_PRED	0x04
+// #define V4L2_H264_SLICE_FLAG_SP_FOR_SWITCH		0x08
 
-struct v4l2_ctrl_h264_slice_param {
-	/* Size in bytes, including header */
-	__u32 size;
-	/* Offset in bits to slice_data() from the beginning of this slice. */
-	__u32 header_bit_size;
-
-	__u16 first_mb_in_slice;
-	__u8 slice_type;
-	__u8 pic_parameter_set_id;
-	__u8 colour_plane_id;
-	__u8 redundant_pic_cnt;
-	__u16 frame_num;
-	__u16 idr_pic_id;
-	__u16 pic_order_cnt_lsb;
-	__s32 delta_pic_order_cnt_bottom;
-	__s32 delta_pic_order_cnt0;
-	__s32 delta_pic_order_cnt1;
-
-	struct v4l2_h264_pred_weight_table pred_weight_table;
-	/* Size in bits of dec_ref_pic_marking() syntax element. */
-	__u32 dec_ref_pic_marking_bit_size;
-	/* Size in bits of pic order count syntax. */
-	__u32 pic_order_cnt_bit_size;
-
-	__u8 cabac_init_idc;
-	__s8 slice_qp_delta;
-	__s8 slice_qs_delta;
-	__u8 disable_deblocking_filter_idc;
-	__s8 slice_alpha_c0_offset_div2;
-	__s8 slice_beta_offset_div2;
-	__u8 num_ref_idx_l0_active_minus1;
-	__u8 num_ref_idx_l1_active_minus1;
-	__u32 slice_group_change_cycle;
-
-	/*
-	 * Entries on each list are indices into
-	 * v4l2_ctrl_h264_decode_param.dpb[].
-	 */
-	__u8 ref_pic_list0[32];
-	__u8 ref_pic_list1[32];
-
-	__u32 flags;
-};
+// struct v4l2_ctrl_h264_slice_param {
+// 	/* Size in bytes, including header */
+// 	__u32 size;
+// 	/* Offset in bits to slice_data() from the beginning of this slice. */
+// 	__u32 header_bit_size;
+//
+// 	__u16 first_mb_in_slice;
+// 	__u8 slice_type;
+// 	__u8 pic_parameter_set_id;
+// 	__u8 colour_plane_id;
+// 	__u8 redundant_pic_cnt;
+// 	__u16 frame_num;
+// 	__u16 idr_pic_id;
+// 	__u16 pic_order_cnt_lsb;
+// 	__s32 delta_pic_order_cnt_bottom;
+// 	__s32 delta_pic_order_cnt0;
+// 	__s32 delta_pic_order_cnt1;
+//
+// 	struct v4l2_h264_pred_weight_table pred_weight_table;
+// 	/* Size in bits of dec_ref_pic_marking() syntax element. */
+// 	__u32 dec_ref_pic_marking_bit_size;
+// 	/* Size in bits of pic order count syntax. */
+// 	__u32 pic_order_cnt_bit_size;
+//
+// 	__u8 cabac_init_idc;
+// 	__s8 slice_qp_delta;
+// 	__s8 slice_qs_delta;
+// 	__u8 disable_deblocking_filter_idc;
+// 	__s8 slice_alpha_c0_offset_div2;
+// 	__s8 slice_beta_offset_div2;
+// 	__u8 num_ref_idx_l0_active_minus1;
+// 	__u8 num_ref_idx_l1_active_minus1;
+// 	__u32 slice_group_change_cycle;
+//
+// 	/*
+// 	 * Entries on each list are indices into
+// 	 * v4l2_ctrl_h264_decode_param.dpb[].
+// 	 */
+// 	__u8 ref_pic_list0[32];
+// 	__u8 ref_pic_list1[32];
+//
+// 	__u32 flags;
+// };
 
 #define V4L2_H264_DPB_ENTRY_FLAG_VALID		0x01
 #define V4L2_H264_DPB_ENTRY_FLAG_ACTIVE		0x02
@@ -175,16 +175,16 @@ struct v4l2_ctrl_h264_slice_param {
 // 	__u32 flags; /* V4L2_H264_DPB_ENTRY_FLAG_* */
 // };
 //
-struct v4l2_ctrl_h264_decode_param {
-	__u32 num_slices;
-	__u16 idr_pic_flag;
-	__u16 nal_ref_idc;
-	__u8 ref_pic_list_p0[32];
-	__u8 ref_pic_list_b0[32];
-	__u8 ref_pic_list_b1[32];
-	__s32 top_field_order_cnt;
-	__s32 bottom_field_order_cnt;
-	struct v4l2_h264_dpb_entry dpb[16];
-};
+// struct v4l2_ctrl_h264_decode_param {
+// 	__u32 num_slices;
+// 	__u16 idr_pic_flag;
+// 	__u16 nal_ref_idc;
+// 	__u8 ref_pic_list_p0[32];
+// 	__u8 ref_pic_list_b0[32];
+// 	__u8 ref_pic_list_b1[32];
+// 	__s32 top_field_order_cnt;
+// 	__s32 bottom_field_order_cnt;
+// 	struct v4l2_h264_dpb_entry dpb[16];
+// };
 
 #endif
